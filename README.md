@@ -1,6 +1,6 @@
 # Paradigma de Decisión Léxica
 
-El **Paradigma de Decisión Léxica** fue desarrollado utilizando PsychoPy Builder. Está diseñado para evaluar la capacidad de un paciente para distinguir entre palabras reales y no reales mientras tiene implantado un iEEG. El paradigma también envía marcadores al dispositivo de grabación para coordinar la sincronización de las señales.
+El **Paradigma de Decisión Léxica** fue desarrollado utilizando PsychoPy Builder. Está diseñado para evaluar la capacidad de un paciente para distinguir entre palabras familiares y no familiares mientras tiene implantado un iEEG. El paradigma también envía marcadores al dispositivo de grabación para coordinar la sincronización de las señales.
 
 ![Esquema del paradigma](esquema.jpg)
 
