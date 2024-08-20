@@ -5,10 +5,10 @@
     <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
     <Param val="" valType="str" updates="None" name="Completed URL"/>
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
-    <Param val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
+    <Param val="u'data/%s/%s_%s' % (expInfo['Participante'], expInfo['Participante'], expInfo['date'])" valType="code" updates="None" name="Data filename"/>
     <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
     <Param val="" valType="str" updates="None" name="End Message"/>
-    <Param val="{'participant': 'f&quot;{randint(0, 999999):06.0f}&quot;', 'session': '001'}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="{'Participante': '', 'Edad': '', 'Lateralidad': &quot;['Derecha', 'Izquierda', '']&quot;}" valType="code" updates="None" name="Experiment info"/>
     <Param val="True" valType="bool" updates="None" name="Force stereo"/>
     <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
     <Param val="" valType="str" updates="None" name="HTML path"/>
@@ -83,7 +83,7 @@
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="practice_trials_instructions" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="constant" name="skipIf"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
@@ -103,7 +103,7 @@
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
@@ -123,13 +123,13 @@
         <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="key_resp_3" valType="code" updates="None" name="name"/>
         <Param val="press" valType="str" updates="constant" name="registerOn"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="nothing" valType="str" updates="constant" name="store"/>
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
@@ -184,13 +184,13 @@
         <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="key_resp_practice_instructions" valType="code" updates="None" name="name"/>
         <Param val="press" valType="str" updates="constant" name="registerOn"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="nothing" valType="str" updates="constant" name="store"/>
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
@@ -297,6 +297,23 @@
         <Param val="True" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
+      <CodeComponent name="code_3" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="serialconection._send_pulse_to_arduino();&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="serialconection._send_pulse_to_arduino()" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_3" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="feedback">
       <RoutineSettingsComponent name="feedback" plugin="None">
@@ -407,13 +424,13 @@
         <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="key_resp_instructiones" valType="code" updates="None" name="name"/>
         <Param val="press" valType="str" updates="constant" name="registerOn"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="nothing" valType="str" updates="constant" name="store"/>
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
@@ -520,6 +537,23 @@
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
+      <CodeComponent name="code_4" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="serialconection._send_pulse_to_arduino();&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="serialconection._send_pulse_to_arduino()" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_4" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="acknowledgment">
       <RoutineSettingsComponent name="acknowledgment" plugin="None">
@@ -531,7 +565,7 @@
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="acknowledgment" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="constant" name="skipIf"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
@@ -551,7 +585,7 @@
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
@@ -571,13 +605,13 @@
         <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="key_resp_end" valType="code" updates="None" name="name"/>
         <Param val="press" valType="str" updates="constant" name="registerOn"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="nothing" valType="str" updates="constant" name="store"/>
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
@@ -612,7 +646,7 @@
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
@@ -632,25 +666,255 @@
         <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="key_resp_2" valType="code" updates="None" name="name"/>
         <Param val="press" valType="str" updates="constant" name="registerOn"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="nothing" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="pulses_trial_instructions">
+      <RoutineSettingsComponent name="pulses_trial_instructions" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="pulses_trial_instructions" valType="code" updates="None" name="name"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="pulses_instructions" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="pulses_instructions" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="A continuacion se mandaran 5 pulsos al equipo, acompañados de un sonido espaciados con 2 segundos. &amp;#10;&amp;#10;Pulse ESPACIO y espere 2 segundos." valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_5" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="key_resp_5" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="nothing" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="blank_2">
+      <RoutineSettingsComponent name="blank_2" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="blank_2" valType="code" updates="None" name="name"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="blank" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="blank" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val=" " valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="pulses">
+      <RoutineSettingsComponent name="pulses" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="pulses" valType="code" updates="None" name="name"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <SoundComponent name="sound_1" plugin="None">
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="hamming"/>
+        <Param val="sound_1" valType="code" updates="None" name="name"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="A" valType="str" updates="constant" name="sound"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="constant" name="stopWithRoutine"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+        <Param val="1" valType="num" updates="constant" name="volume"/>
+      </SoundComponent>
+      <CodeComponent name="code_2" plugin="None">
+        <Param val="from pulseSender import PulseSender&amp;#10;import pandas as pd&amp;#10;import serial.tools.list_ports&amp;#10;&amp;#10;def find_serial_ports():&amp;#10;    ports = serial.tools.list_ports.comports()&amp;#10;    arduino_ports = []&amp;#10;&amp;#10;    for port in ports:&amp;#10;        # You can add more checks here based on the specific attributes of your Arduino&amp;#10;        if 'Arduino' in port.description or 'CH340' in port.description:&amp;#10;            arduino_ports.append(port.device)&amp;#10;&amp;#10;    return arduino_ports[0]" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# Configure connection to the board&amp;#10;port = find_serial_ports()&amp;#10;baud_rate = 115200&amp;#10;serialconection = PulseSender(port, baud_rate)" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="serialconection._send_pulse_to_arduino()" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="serialconection._serial.close()&amp;#10;&amp;#10;tempFileName = thisExp.dataFileName + '_TEMP.csv' &amp;#10;thisExp.saveAsWideText(tempFileName)    &amp;#10;df = pd.read_csv(tempFileName, delimiter=',')&amp;#10;&amp;#10;df.to_csv(thisExp.dataFileName + '_spanish.csv', sep=';', decimal=',', index=False, encoding='utf-8')&amp;#10;&amp;#10;os.remove(tempFileName)" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_2" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="pulses_response">
+      <RoutineSettingsComponent name="pulses_response" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="pulses_response" valType="code" updates="None" name="name"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="text_3" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="text_3" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Si vio los 5 pulsos en la señal, presione ESPACIO para continuar.&amp;#10;&amp;#10;Si no, presione ESC y DESCONECTE el dispositivo serial." valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_6" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="key_resp_6" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="nothing" valType="str" updates="constant" name="store"/>
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
     </Routine>
   </Routines>
   <Flow>
+    <Routine name="pulses_trial_instructions"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_2">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="False" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="5" valType="num"/>
+      <Param name="name" updates="None" val="trials_2" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="blank_2"/>
+    <Routine name="pulses"/>
+    <LoopTerminator name="trials_2"/>
+    <Routine name="pulses_response"/>
     <Routine name="practice_trials_instructions"/>
     <Routine name="practice_trials_instructions_3"/>
     <Routine name="practice_trials_instructions_2"/>
     <LoopInitiator loopType="TrialHandler" name="trials_practice">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{'task': 'practice (8)', 'practiceWord': 'novedad', 'englishWord': 'novelty', 'POS': 'N', 'LEN': 7, 'CON_M': 2.65, 'FAM_M': 5.65, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract', 'correctAns': 'j'}, {'task': None, 'practiceWord': 'violencia', 'englishWord': 'violence', 'POS': 'N', 'LEN': 9, 'CON_M': 2.2, 'FAM_M': 6.05, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract', 'correctAns': 'j'}, {'task': None, 'practiceWord': 'trance', 'englishWord': 'trance', 'POS': 'N V', 'LEN': 6, 'CON_M': 2.43, 'FAM_M': 2.9, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract', 'correctAns': 'k'}, {'task': None, 'practiceWord': 'ademán', 'englishWord': 'gesture', 'POS': 'N', 'LEN': 6, 'CON_M': 3.22727272727273, 'FAM_M': 3.32, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract', 'correctAns': 'k'}, {'task': None, 'practiceWord': 'celadora', 'englishWord': 'warden', 'POS': 'A N', 'LEN': 8, 'CON_M': 5.52380952380952, 'FAM_M': 3.48, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete', 'correctAns': 'k'}, {'task': None, 'practiceWord': 'navajero', 'englishWord': 'navajero', 'POS': 'N', 'LEN': 8, 'CON_M': 5.95, 'FAM_M': 3.32, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete', 'correctAns': 'k'}, {'task': None, 'practiceWord': 'peluquero', 'englishWord': 'hairdresser', 'POS': 'N', 'LEN': 9, 'CON_M': 6.14, 'FAM_M': 6.1, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete', 'correctAns': 'j'}, {'task': None, 'practiceWord': 'tractor', 'englishWord': 'tractor', 'POS': 'N', 'LEN': 7, 'CON_M': 6.77, 'FAM_M': 6.13, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete', 'correctAns': 'j'}]" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'practiceWord': 'novedad', 'englishWord': 'novelty', 'correctAns': 'left'}, {'practiceWord': 'violencia', 'englishWord': 'violence', 'correctAns': 'left'}, {'practiceWord': 'trance', 'englishWord': 'trance', 'correctAns': 'right'}, {'practiceWord': 'ademán', 'englishWord': 'gesture', 'correctAns': 'right'}, {'practiceWord': 'celadora', 'englishWord': 'warden', 'correctAns': 'right'}, {'practiceWord': 'navajero', 'englishWord': 'navajero', 'correctAns': 'right'}, {'practiceWord': 'peluquero', 'englishWord': 'hairdresser', 'correctAns': 'left'}, {'practiceWord': 'tractor', 'englishWord': 'tractor', 'correctAns': 'left'}]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="resources/practice.xlsx" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
@@ -666,7 +930,7 @@
     <Routine name="instructions"/>
     <LoopInitiator loopType="TrialHandler" name="trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{'task': 'abstract_concrete', 'Word': 'enigma', 'englishWord': 'enigma', 'POS': 'N', 'LEN': 6, 'CON_M': 2.95, 'FAM_M': 4.23809523809524, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'quimera', 'englishWord': 'chimera', 'POS': 'N', 'LEN': 7, 'CON_M': 2.95238095238095, 'FAM_M': 3.35, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'inflación', 'englishWord': 'inflation', 'POS': 'N', 'LEN': 9, 'CON_M': 3.2, 'FAM_M': 3.4, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'heroísmo', 'englishWord': 'heroism', 'POS': 'N', 'LEN': 8, 'CON_M': 3.04545454545455, 'FAM_M': 3.45454545454545, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'severidad', 'englishWord': 'severity', 'POS': 'N', 'LEN': 9, 'CON_M': 3.36363636363636, 'FAM_M': 3.66666666666667, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'idealismo', 'englishWord': 'idealism', 'POS': 'N', 'LEN': 9, 'CON_M': 2.80952380952381, 'FAM_M': 3.71428571428571, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'divinidad', 'englishWord': 'divinity', 'POS': 'N', 'LEN': 9, 'CON_M': 1.85, 'FAM_M': 3.75, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'analogía', 'englishWord': 'analogy', 'POS': 'N', 'LEN': 8, 'CON_M': 2.40909090909091, 'FAM_M': 3.75, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'impureza', 'englishWord': 'impurity', 'POS': 'N', 'LEN': 8, 'CON_M': 3.27272727272727, 'FAM_M': 3.76190476190476, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'fealdad', 'englishWord': 'ugliness', 'POS': 'N', 'LEN': 7, 'CON_M': 3.36363636363636, 'FAM_M': 3.76190476190476, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'artefacto', 'englishWord': 'artifact', 'POS': 'N', 'LEN': 9, 'CON_M': 2.86363636363636, 'FAM_M': 3.80952380952381, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'martirio', 'englishWord': 'martyrdom', 'POS': 'N', 'LEN': 8, 'CON_M': 2.45, 'FAM_M': 3.81818181818182, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'instancia', 'englishWord': 'instance', 'POS': 'N', 'LEN': 9, 'CON_M': 2.57142857142857, 'FAM_M': 4.04545454545455, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'adoración', 'englishWord': 'worship', 'POS': 'N', 'LEN': 9, 'CON_M': 2.22727272727273, 'FAM_M': 4.04761904761905, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'trecho', 'englishWord': 'stretch', 'POS': 'N', 'LEN': 6, 'CON_M': 3.04545454545455, 'FAM_M': 4.05, 'Freq_condition': 'low_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'depresión', 'englishWord': 'depression', 'POS': 'N', 'LEN': 9, 'CON_M': 2.5, 'FAM_M': 6.18181818181818, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'optimismo', 'englishWord': 'optimism', 'POS': 'N', 'LEN': 9, 'CON_M': 3.04761904761905, 'FAM_M': 6.2, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'pérdida', 'englishWord': 'loss', 'POS': 'N', 'LEN': 7, 'CON_M': 2.4, 'FAM_M': 6.25, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'facilidad', 'englishWord': 'ease', 'POS': 'N', 'LEN': 9, 'CON_M': 2.45, 'FAM_M': 6.25, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'capacidad', 'englishWord': 'capacity', 'POS': 'N', 'LEN': 9, 'CON_M': 2.65, 'FAM_M': 6.25, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'trámite', 'englishWord': 'process', 'POS': 'N', 'LEN': 7, 'CON_M': 3.15, 'FAM_M': 6.25, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'artículo', 'englishWord': 'article', 'POS': 'N', 'LEN': 8, 'CON_M': 2.72727272727273, 'FAM_M': 6.3, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'prioridad', 'englishWord': 'priority', 'POS': 'N', 'LEN': 9, 'CON_M': 2.9, 'FAM_M': 6.35, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'realidad', 'englishWord': 'reality', 'POS': 'N', 'LEN': 8, 'CON_M': 2.95, 'FAM_M': 6.35, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'tentación', 'englishWord': 'temptation', 'POS': 'N', 'LEN': 9, 'CON_M': 2.95, 'FAM_M': 6.35, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'teoría', 'englishWord': 'theory', 'POS': 'N', 'LEN': 6, 'CON_M': 3.55, 'FAM_M': 6.35, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'historia', 'englishWord': 'history', 'POS': 'N', 'LEN': 8, 'CON_M': 2.63636363636364, 'FAM_M': 6.38095238095238, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'atracción', 'englishWord': 'attraction', 'POS': 'N', 'LEN': 9, 'CON_M': 2.77272727272727, 'FAM_M': 6.4, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'ternura', 'englishWord': 'tenderness', 'POS': 'N', 'LEN': 7, 'CON_M': 3.2, 'FAM_M': 6.4, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'tensión', 'englishWord': 'voltage', 'POS': 'N', 'LEN': 7, 'CON_M': 2.45, 'FAM_M': 6.45, 'Freq_condition': 'high_freq', 'Conc_condition': 'abstract'}, {'task': None, 'Word': 'embajada', 'englishWord': 'embassy', 'POS': 'N', 'LEN': 8, 'CON_M': 5.4, 'FAM_M': 3.57, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'verdugo', 'englishWord': 'executioner', 'POS': 'N', 'LEN': 7, 'CON_M': 5.43, 'FAM_M': 3.57, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'baranda', 'englishWord': 'railing', 'POS': 'N', 'LEN': 7, 'CON_M': 5, 'FAM_M': 3.65, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'castidad', 'englishWord': 'chastity', 'POS': 'N', 'LEN': 8, 'CON_M': 5.45, 'FAM_M': 3.8, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'curandero', 'englishWord': 'healer', 'POS': 'N', 'LEN': 9, 'CON_M': 5.38, 'FAM_M': 3.82, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'mezquita', 'englishWord': 'mosque', 'POS': 'N', 'LEN': 8, 'CON_M': 6.38, 'FAM_M': 3.85, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'cardenal', 'englishWord': 'cardinal', 'POS': 'N', 'LEN': 8, 'CON_M': 5.18, 'FAM_M': 3.9, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'volcán', 'englishWord': 'volcano', 'POS': 'N', 'LEN': 6, 'CON_M': 6.59, 'FAM_M': 3.9, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'adulterio', 'englishWord': 'adultery', 'POS': 'N', 'LEN': 9, 'CON_M': 5.27, 'FAM_M': 3.95, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'modista', 'englishWord': 'dressmaker', 'POS': 'N', 'LEN': 7, 'CON_M': 5.82, 'FAM_M': 3.95, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'tarántula', 'englishWord': 'tarantula', 'POS': 'N', 'LEN': 9, 'CON_M': 6.73, 'FAM_M': 4, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'garfio', 'englishWord': 'hook', 'POS': 'N', 'LEN': 6, 'CON_M': 6, 'FAM_M': 4.04, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'ciclón', 'englishWord': 'cyclone', 'POS': 'N', 'LEN': 6, 'CON_M': 5.5, 'FAM_M': 4.05, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'pedófilo', 'englishWord': 'pedophile', 'POS': 'N', 'LEN': 8, 'CON_M': 5.5, 'FAM_M': 4.05, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'ejecutivo', 'englishWord': 'executive', 'POS': 'N', 'LEN': 9, 'CON_M': 5.65, 'FAM_M': 4.19, 'Freq_condition': 'low_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'mordisco', 'englishWord': 'bite', 'POS': 'N', 'LEN': 8, 'CON_M': 5.75, 'FAM_M': 6.18, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'masaje', 'englishWord': 'massage', 'POS': 'N', 'LEN': 6, 'CON_M': 5.55, 'FAM_M': 6.19, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'fotógrafa', 'englishWord': 'photographer', 'POS': 'N', 'LEN': 9, 'CON_M': 5.57, 'FAM_M': 6.14, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'erección', 'englishWord': 'erection', 'POS': 'N', 'LEN': 8, 'CON_M': 6.27, 'FAM_M': 6.2, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'campeona', 'englishWord': 'champion', 'POS': 'N', 'LEN': 8, 'CON_M': 5.04, 'FAM_M': 5.6, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'orgasmo', 'englishWord': 'orgasm', 'POS': 'N', 'LEN': 7, 'CON_M': 5, 'FAM_M': 6.23, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'párrafo', 'englishWord': 'paragraph', 'POS': 'N', 'LEN': 7, 'CON_M': 5.41, 'FAM_M': 6.23, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'bañador', 'englishWord': 'swimsuit', 'POS': 'N', 'LEN': 7, 'CON_M': 5.55, 'FAM_M': 6.24, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'profesora', 'englishWord': 'teacher', 'POS': 'N', 'LEN': 9, 'CON_M': 5.05, 'FAM_M': 6.95, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'cenicero', 'englishWord': 'ashtray', 'POS': 'N', 'LEN': 8, 'CON_M': 6.7, 'FAM_M': 5.75, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'psicóloga', 'englishWord': 'psychologist', 'POS': 'N', 'LEN': 9, 'CON_M': 5.38, 'FAM_M': 6.59, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'lágrima', 'englishWord': 'tear', 'POS': 'N', 'LEN': 7, 'CON_M': 6.32, 'FAM_M': 6.27, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'librería', 'englishWord': 'bookshop', 'POS': 'N', 'LEN': 8, 'CON_M': 6.36, 'FAM_M': 'm', 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'columna', 'englishWord': 'column', 'POS': 'N', 'LEN': 7, 'CON_M': 5.1, 'FAM_M': 6.29, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}, {'task': None, 'Word': 'relámpago', 'englishWord': 'lightning', 'POS': 'N', 'LEN': 9, 'CON_M': 5.91, 'FAM_M': 5.75, 'Freq_condition': 'high_freq', 'Conc_condition': 'concrete'}]" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'Word': 'enigma'}, {'Word': 'quimera'}, {'Word': 'codicia'}, {'Word': 'heroísmo'}, {'Word': 'severidad'}, {'Word': 'idealismo'}, {'Word': 'divinidad'}, {'Word': 'analogía'}, {'Word': 'impureza'}, {'Word': 'fealdad'}, {'Word': 'artefacto'}, {'Word': 'martirio'}, {'Word': 'instancia'}, {'Word': 'adoración'}, {'Word': 'trecho'}, {'Word': 'depresión'}, {'Word': 'optimismo'}, {'Word': 'pérdida'}, {'Word': 'facilidad'}, {'Word': 'capacidad'}, {'Word': 'trámite'}, {'Word': 'artículo'}, {'Word': 'prioridad'}, {'Word': 'realidad'}, {'Word': 'tentación'}, {'Word': 'teoría'}, {'Word': 'historia'}, {'Word': 'atracción'}, {'Word': 'ternura'}, {'Word': 'tensión'}, {'Word': 'embajada'}, {'Word': 'verdugo'}, {'Word': 'baranda'}, {'Word': 'castidad'}, {'Word': 'curandero'}, {'Word': 'mezquita'}, {'Word': 'cardenal'}, {'Word': 'volcán'}, {'Word': 'adulterio'}, {'Word': 'modista'}, {'Word': 'tarántula'}, {'Word': 'garfio'}, {'Word': 'ciclón'}, {'Word': 'pedófilo'}, {'Word': 'ejecutivo'}, {'Word': 'mordisco'}, {'Word': 'masaje'}, {'Word': 'fotógrafa'}, {'Word': 'erección'}, {'Word': 'campeona'}, {'Word': 'orgasmo'}, {'Word': 'párrafo'}, {'Word': 'bañador'}, {'Word': 'profesora'}, {'Word': 'cenicero'}, {'Word': 'psicóloga'}, {'Word': 'lágrima'}, {'Word': 'librería'}, {'Word': 'columna'}, {'Word': 'relámpago'}]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="resources/stimuli.xlsx" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
