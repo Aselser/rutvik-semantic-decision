@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.3),
-    on agosto 19, 2024, at 22:17
+    on septiembre 03, 2024, at 09:42
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -381,7 +381,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "practice_trials_instructions_3" ---
     text = visual.TextStim(win=win, name='text',
-        text="Presioná la flecha IZQUIERDA si la palabra te resulta muy familiar, y la DERECHA si no te resulta muy familiar. Por ejemplo, las palabras 'bondad' y 'siesta' pueden ser consideradas muy familiares o comunes. \n\nPalabras como 'maleficio' o 'marqués' pueden ser consideradas no familiares o poco comunes.\n\nPulse ESPACIO para continuar.",
+        text="Presioná la flecha IZQUIERDA si la palabra te resulta muy familiar o comun, y la DERECHA si no te resulta muy familiar o comun.  No importa no conocer el significado de la palabra.\n\nPor ejemplo, las palabras 'bondad' y 'siesta' pueden ser consideradas muy familiares o comunes. \n\nPalabras como 'maleficio' o 'marqués' pueden ser consideradas no familiares o poco comunes.\n\nPulse ESPACIO para continuar.",
         font='Open Sans',
         pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -391,7 +391,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "practice_trials_instructions_2" ---
     practice_instructions_text_3 = visual.TextStim(win=win, name='practice_instructions_text_3',
-        text='Ahora vamos a hacer algunos ensayos de práctica. Respondé lo más rápido que puedas sin cometer errores. \n\nPresioná ESPACIO para continuar.',
+        text='Ahora vamos a hacer algunos ensayos de práctica. Respondé lo más rápido que puedas.\n\nNo hay una respuesta estrictametne correcta. Juzga cuan familiares o comunes son los estímulos según lo que más te parezca.\n\nPresioná ESPACIO para continuar.',
         font='Open Sans',
         pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -417,15 +417,6 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         languageStyle='LTR',
         depth=0.0);
     key_resp_practice_stim = keyboard.Keyboard()
-    
-    # --- Initialize components for Routine "feedback" ---
-    feedback_text_comp = visual.TextStim(win=win, name='feedback_text_comp',
-        text='',
-        font='Open Sans',
-        pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
-        color='white', colorSpace='rgb', opacity=None, 
-        languageStyle='LTR',
-        depth=-1.0);
     
     # --- Initialize components for Routine "instructions" ---
     text_instructions = visual.TextStim(win=win, name='text_instructions',
@@ -1481,102 +1472,6 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
             routineTimer.reset()
         else:
             routineTimer.addTime(-4.500000)
-        
-        # --- Prepare to start Routine "feedback" ---
-        continueRoutine = True
-        # update component parameters for each repeat
-        thisExp.addData('feedback.started', globalClock.getTime())
-        # Run 'Begin Routine' code from code
-        feedback_text = 'CORRECTO' if correctAns == key_resp_practice_stim.keys else 'INCORRECTO'
-        feedback_text_comp.setText(feedback_text)
-        # keep track of which components have finished
-        feedbackComponents = [feedback_text_comp]
-        for thisComponent in feedbackComponents:
-            thisComponent.tStart = None
-            thisComponent.tStop = None
-            thisComponent.tStartRefresh = None
-            thisComponent.tStopRefresh = None
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
-        # reset timers
-        t = 0
-        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-        frameN = -1
-        
-        # --- Run Routine "feedback" ---
-        routineForceEnded = not continueRoutine
-        while continueRoutine and routineTimer.getTime() < 1.5:
-            # get current time
-            t = routineTimer.getTime()
-            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
-            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
-            
-            # *feedback_text_comp* updates
-            
-            # if feedback_text_comp is starting this frame...
-            if feedback_text_comp.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                # keep track of start time/frame for later
-                feedback_text_comp.frameNStart = frameN  # exact frame index
-                feedback_text_comp.tStart = t  # local t and not account for scr refresh
-                feedback_text_comp.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(feedback_text_comp, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'feedback_text_comp.started')
-                # update status
-                feedback_text_comp.status = STARTED
-                feedback_text_comp.setAutoDraw(True)
-            
-            # if feedback_text_comp is active this frame...
-            if feedback_text_comp.status == STARTED:
-                # update params
-                pass
-            
-            # if feedback_text_comp is stopping this frame...
-            if feedback_text_comp.status == STARTED:
-                # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > feedback_text_comp.tStartRefresh + 1.5-frameTolerance:
-                    # keep track of stop time/frame for later
-                    feedback_text_comp.tStop = t  # not accounting for scr refresh
-                    feedback_text_comp.frameNStop = frameN  # exact frame index
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'feedback_text_comp.stopped')
-                    # update status
-                    feedback_text_comp.status = FINISHED
-                    feedback_text_comp.setAutoDraw(False)
-            
-            # check for quit (typically the Esc key)
-            if defaultKeyboard.getKeys(keyList=["escape"]):
-                thisExp.status = FINISHED
-            if thisExp.status == FINISHED or endExpNow:
-                endExperiment(thisExp, inputs=inputs, win=win)
-                return
-            
-            # check if all components have finished
-            if not continueRoutine:  # a component has requested a forced-end of Routine
-                routineForceEnded = True
-                break
-            continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in feedbackComponents:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
-            
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
-        
-        # --- Ending Routine "feedback" ---
-        for thisComponent in feedbackComponents:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
-        thisExp.addData('feedback.stopped', globalClock.getTime())
-        # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
-        if routineForceEnded:
-            routineTimer.reset()
-        else:
-            routineTimer.addTime(-1.500000)
         thisExp.nextEntry()
         
         if thisSession is not None:
